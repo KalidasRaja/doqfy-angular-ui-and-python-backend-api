@@ -1,0 +1,75 @@
+<div class="mainbody px-4">
+    <div class="container-fluid">
+       <div class="row">
+          <div class="col-8">
+             <div class="main-head pb-2">
+                <h1 class="maintitle">Add Inventory</h1>
+             </div>
+          </div>
+       </div>
+       <form accept-charset="UTF-8" class="g-3 needs-validation" novalidate #userForm="ngForm">
+            <div class="row">
+                <div class="col-12">        
+                    <div class="cardbody-border">
+                        <div class="row g-4">
+                            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12">
+                                <label for="name" class="form-label lbl-required">Name</label>
+                                <input #name="ngModel" [(ngModel)]="inventoryObj.name" class="form-control border-black " required="" name="name" type="text" id="name">
+                                <div class="text-danger" *ngIf="name.invalid && (name.touched || name.dirty) || isFormSubmited" > 
+                                    <span *ngIf="name.errors?.['required']">The name field is required.</span>
+                                </div>
+                            </div>
+                            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12">
+                                <label for="sku" class="form-label lbl-required">SKU</label>
+                                <input #sku="ngModel" [(ngModel)]="inventoryObj.sku" class="form-control border-black " required="" name="sku" type="text" id="sku">
+                                <div class="text-danger" *ngIf="sku.invalid && (sku.touched || sku.dirty) || isFormSubmited" > 
+                                    <span *ngIf="sku.errors?.['required']">The sku field is required.</span>
+                                </div>
+                            </div>
+                            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12">
+                                <label for="category" class="form-label lbl-required">Category</label>
+                                <input #category="ngModel" [(ngModel)]="inventoryObj.category" class="form-control border-black " required="" name="category" type="text" id="category">
+                                <div class="text-danger" *ngIf="category.invalid && (category.touched || category.dirty) || isFormSubmited" > 
+                                    <span *ngIf="category.errors?.['required']">The category field is required.</span>
+                                </div>
+                            </div>
+                            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12">
+                                <label for="quantity" class="form-label lbl-required">Quantity</label>
+                                <input #quantity="ngModel" [(ngModel)]="inventoryObj.quantity" class="form-control border-black " required="" onkeypress="return event.charCode >= 48 && event.charCode <= 57" name="quantity" type="text" id="quantity">
+                                <div class="text-danger" *ngIf="quantity.invalid && (quantity.touched || quantity.dirty) || isFormSubmited" > 
+                                    <span *ngIf="quantity.errors?.['required']">The quantity field is required.</span>
+                                </div>
+                            </div>
+                            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12">
+                                <label for="price" class="form-label lbl-required">Price</label>
+                                <input #price="ngModel" [(ngModel)]="inventoryObj.price" class="form-control border-black " required="" onkeypress="return event.charCode >= 48 && event.charCode <= 57" name="price" type="text" id="price">
+                                <div class="text-danger" *ngIf="price.invalid && (price.touched || price.dirty) || isFormSubmited" > 
+                                    <span *ngIf="price.errors?.['required']">The price field is required.</span>
+                                </div>
+                            </div>
+                            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12">
+                                <label for="supplier_details" class="form-label lbl-required">Supplier Details</label>
+                                <input #supplier_details="ngModel" [(ngModel)]="inventoryObj.supplier_details" class="form-control border-black " required="" name="supplier_details" type="text" id="supplier_details">
+                                <div class="text-danger" *ngIf="supplier_details.invalid && (supplier_details.touched || supplier_details.dirty) || isFormSubmited" > 
+                                    <span *ngIf="supplier_details.errors?.['required']">The supplier details field is required.</span>
+                                </div>
+                            </div>
+                            <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-12 col-sm-12">
+                                <label for="description" class="form-label lbl-required">Description</label>
+                                <textarea #description="ngModel" [(ngModel)]="inventoryObj.description" class="form-control border-black " required="" name="description" cols="50" rows="10" id="description"></textarea>
+                                <div class="text-danger" *ngIf="description.invalid && (description.touched || description.dirty) || isFormSubmited" > 
+                                    <span *ngIf="description.errors?.['required']">The description field is required.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="submit-section pt-3 float-end">
+                            <button class="btn btn-primary rounded-3" [disabled]="!userForm.form.valid" type="submit" (click)="onUpdateInventory()">Save</button>
+                            <a href="/" class="btn btn-outline-secondary ms-3 rounded-3">Back</a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </form>
+    </div>
+ </div>

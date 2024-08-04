@@ -1,0 +1,49 @@
+<div class="mainbody px-4">
+    <div class="container-fluid">
+       <div class="row">
+          <div class="col-12">
+             <div class="d-flex justify-content-between align-items-center pb-2">
+                <h1 class="maintitle" href="/">Inventory List</h1>
+                <a href="/inventory/create" class="btn btn-primary">Create Inventory</a>
+             </div>
+          </div>
+       </div>
+       <div class="row">
+          <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
+            <table class="table table-striped table-bordered table-orderentry border-black" id="dataTableBuilder">
+                <thead class="text-center">
+                   <tr>
+                      <th scope="col">Name</th>
+                      <th scope="col" width="15%">Description</th>
+                      <th scope="col">SKU</th>
+                      <th scope="col">Category</th>
+                      <th scope="col">Quantity</th>
+                      <th scope="col" width="15%">Supplier Details</th>
+                      <th scope="col">Price</th>
+                      <th scope="col">Action</th>
+                   </tr>
+                </thead>
+                <tbody *ngIf="data">
+                    <tr *ngFor="let item of data">
+                        <td>{{item.name}}</td>
+                        <td>{{item.description}}</td>
+                        <td>{{item.sku}}</td>
+                        <td>{{item.category}}</td>
+                        <td class="text-end pe-4">{{item.quantity}}</td>
+                        <td>{{item.supplier_details}}</td>
+                        <td class="text-end pe-4">{{item.price}}</td>
+                        <td>
+                            <div class="table-action">
+                                <a class="px-2 edit-inventory" href="/inventory/edit/{{item.id}}" data-id="{{item.id}}" >
+                                    <i class="fas fa-pen text-black" aria-hidden="true"></i>
+                                </a>
+                                <span>|</span><i class="fas fa-trash-alt px-2 delete-inventory" data-id="{{item.id}}" style="cursor: pointer;font-size: 16px;" aria-hidden="true"></i>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+             </table>
+          </div>
+       </div>
+    </div>
+ </div>

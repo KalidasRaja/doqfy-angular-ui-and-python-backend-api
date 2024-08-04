@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>InventoryAppAngular</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    body{
+      background-color: #eae7e7c3 ;
+    }
+    .side-nav{
+      max-width: 15%;
+      position: fixed;
+      padding-top: 0px;
+      left: 0;
+      transition: all 0.3s ease 0s;
+    }
+    .mainbody{
+      float: right;
+      width: 100%;
+      padding: 20px 0 0;
+      position: relative;
+      z-index: 9;
+      transition: all 0.3s ease 0s;
+      overflow-y: auto;
+      height: 95vh;
+    }
+
+    .cardbody-border {
+      border: 1px solid #000;
+      padding: 15px;
+      float: left;
+      width: 100%;
+      position: relative;
+      min-height: 435px;
+      margin-bottom: 20px;
+    }
+    .lbl-required:after {
+      content: "*";
+      color: red;
+      padding-left: 1px;
+    }
+  </style>
+</head>
+<body>
+  <app-root></app-root>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
